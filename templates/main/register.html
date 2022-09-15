@@ -1,0 +1,79 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+<main class="login">
+    <div class="form container mt-3">
+        <h1>Register</h1>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="input-block">
+                <i class="fa-solid fa-user-check"></i>
+                {{ form.username }}
+                {% if form.username.errors %}
+                <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                {% endif %}
+            </div>
+            <div class="input-block">
+                <i class="fa-light fa-user"></i>
+                {{ form.name }}
+                {% if form.name.errors %}
+                <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                {% endif %}
+            </div>
+            <div class="input-block">
+                <i class="fa-solid fa-user-hair"></i>
+                {{ form.surname }}
+                {% if form.surname.errors %}
+                <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                {% endif %}
+            </div>
+            <div class="input-block">
+                <i class="fa-solid fa-chart-waterfall"></i>
+                {{ form.age }}
+                {% if form.age.errors %}
+                <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                {% endif %}
+            </div>
+            <div class="input-block">
+                <i class="fa-solid fa-phone">+998</i>
+                {{ form.phone }}
+                {% if form.phone.errors %}
+                <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                {% endif %}
+            </div>
+            <div class="input-block">
+                <i class="fa-solid fa-genderless"></i>
+                {{ form.gender }}
+            </div>
+            <div class="input-block">
+                <i class="fa-solid fa-location-dot"></i>
+                {{ form.address }}
+            </div>
+            <div class="input-block">
+                <i class="fa-light fa-lock"></i>
+                {{ form.password }}
+                {% if form.password.errors %}
+                <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                {% endif %}
+            </div>
+            <div class="input-block">
+                <i class="fa-solid fa-hashtag-lock"></i>
+                {{ form.repeat_password }}
+                {% if form.repeat_password.errors %}
+                <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                {% endif %}
+            </div>
+            
+            
+            <input type="submit" value="Kirsh" class="btn btn-submit">
+            <br><br>
+        </form>
+    </div>
+</main>
+{% endblock %}
+{% block code %}
+<script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+<script>
+    $("#id_phone").inputmask({ mask: "(99) 999 99 99" });
+</script>
+{% endblock %}

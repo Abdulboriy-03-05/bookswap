@@ -1,0 +1,53 @@
+{% extends "advert/base.html" %}
+{% load static %}
+{% block content %}
+<header>
+    <section class="add_advert">
+        <h1>E’lon Joylash</h1>
+        <div class="row">
+            <div class="col-lg-4 order-lg-2">
+                <div class="white-card" style="display: flex;  align-items: center;  justify-content: center; flex-direction:column;">
+                    <h1 class="text-danger">Rostan ham ushbu postni o'chirib yubormoqchimisiz</h1>
+                    <br><br>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <button class="btn" type="submit" style="max-width: 180px;"> ha</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-8 col-lg-fisrt">
+                <div class="white-card">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <img src="{{object.image.url}}" alt="" style="max-height: 400px; max-width: 100%;">
+                        </div>
+                        <div class="col-sm-7">
+                            <ul class="about-book" style="text-transform:capitalize;">
+                                <li>
+                                    <strong>Nomi:</strong>
+                                    <span>{{object.title}}</span>
+                                </li>
+                                <li>
+                                    <strong>Avtori:</strong>
+                                    <span>{{object.author_pen}}</span>
+                                </li>
+                                <li>
+                                    <strong>Janri:</strong>
+                                    <span>{{object.genre}}</span>
+                                </li>
+                                <li>
+                                    <strong>Kitob haqida:</strong>
+                                    <br>
+                                    <p>{{object.description}}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+</header>
+{% endblock %}

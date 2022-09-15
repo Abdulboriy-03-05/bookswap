@@ -1,0 +1,177 @@
+{% extends "advert/base.html" %}
+{% load static %}
+{% block content %}
+<header>
+    <section class="add_advert">
+        <h1>E’lon Tahrirlash</h1>
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="white-card">
+                    <form method="post" enctype="multipart/form-data" class="row">
+                        <div class="col-sm-6">
+                            {% csrf_token %}
+                            <div class="d-none">{{ form.image }}</div>
+                            <label for="id_image">
+                                <img src="{{ object.image.url }}" alt="image" id="uploadImg"
+                                    style="max-height: 400px; width: 100%;">
+                            </label>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="input-group">
+                                {{ form.title }}
+                                {{ form.author_pen }}
+
+                                {{ form.genre }}
+                                {{ form.description }}
+                                <br class="">
+                                <button class="btn" type="submit">
+                                    Qabul qilish
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="white-card">
+                    <div class="about-user">
+                        <h2 class="mr-3">Foydalanuvchi</h2>
+                        <div class="user-componet">
+                            <img src="{{request.user.avatar.url}}" alt="">
+                            <div class="user-bio">
+                                <h3 style="text-transform: capitalize;">{{request.user.name}} {{request.user.surname}}
+                                </h3>
+                                <h5>Last seen: {{request.user.updated_at }}</h5>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>
+                                <strong>Foydalanuvchi nomi:</strong>
+                                <span>@{{request.user.username }}</span>
+                            </li>
+                            <li>
+                                <strong>Joylashuv:</strong>
+                                <span>{{request.user.address}} Shaxri</span>
+                            </li>
+                            <li>
+                                <strong>Telefon raqimi:</strong>
+                                <span>{{request.user.phone}}</span>
+                            </li>
+                        </ul>
+                        <br>
+                        <a href="tel:{{request.user.phone}}" class="text-light">
+                            <button class="btn">
+                                Qong'iroq
+                            </button>
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br><br>
+</header>
+<div class="container">
+    <section class="advert-section mt-5">
+      {% if books %}
+      <h1>Sizning barcha e’lonlari:</h1>
+      {% endif %}
+      <div class="owl-carousel owl-theme">
+        {% for book in books %}
+        <div class="item d-inline">
+          <a href="{% url 'main:detail' book.slug %}" class="text-dark" style="text-decoration: none;">
+            <div class="advert-box">
+              <img src="{{book.image.url}}" alt="">
+              <ul>
+                <li>
+                  <strong>Nomi:</strong>
+                  <span>{{book.title}}</span>
+                </li>
+                <li>
+                  <strong>Avtori:</strong>
+                  <span>{{book.author_pen}}</span>
+                </li>
+                <li>
+                  <strong>Janri:</strong>
+                  <span>{{book.genre}}</span>
+                </li>
+              </ul>
+              <span class="about-box">{{book.author.address}} <br> {{book.created_at}}</span>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    <br><br>
+  </div>
+{% endblock %}
+
+
+{% block code %}
+<script type="text/javascript" src="/static/js/resizer_image.js"></script>
+<script>
+    let input = document.querySelectorAll('input');
+    arr = ['', '', 'Sarlavha', 'Muallif', 'qidiruv']
+    for (var i = 0; i < input.length-1; i++) {
+        input[i].classList.add('value-input')
+        input[i].setAttribute('placeholder', `${arr[i]}`)
+        input[i].setAttribute('autocomplete', "off")
+    }
+    let input_file = document.querySelector('#id_image');
+    input_file.style = 'display: none;'
+    let target = document.querySelector('#uploadImg')
+    let file;
+
+    input_file.addEventListener("change", (event) => {
+        event.preventDefault();
+        file = event.target.files[0]
+        showFile();
+    });
+
+    function showFile() {
+        let fileType = file.type;
+        let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+        if (validExtensions.includes(fileType)) {
+            let fileReader = new FileReader();
+            fileReader.onload = () => {
+                let fileURL = fileReader.result;
+                target.attributes.src.nodeValue = `${fileURL}`
+            }
+            fileReader.readAsDataURL(file);
+        } else {
+            alert("This is not an Image File!");
+        }
+    }
+
+    $('#id_image').imageUploadResizer({
+        max_width: 360,
+        max_height: 810,
+        quality: 1,
+        do_not_resize: ['gif', 'svg'],
+    });
+    
+  $(".owl-carousel").owlCarousel({
+    loop: false,
+    margin: 10,
+    dots: false,
+    nav: false,
+  
+    responsive: {
+      0: {
+        items: 2
+      },
+      768: {
+        items: 3
+      },
+      1336: {
+        item: 4
+      },
+      1340: {
+        items: 4
+      }
+    }
+  })
+</script>
+{% endblock %}

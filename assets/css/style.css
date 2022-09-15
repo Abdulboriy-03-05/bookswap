@@ -1,0 +1,1413 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Kaushan+Script&family=Open+Sans:wght@300&display=swap');
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+html {
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Canaro;
+    font-weight: 600, Semi Bold;
+    overflow-x: hidden !important;
+}
+
+body.page {
+    background-color: #F2F4F5;
+    color: #000;
+}
+
+nav {
+    width: 100vw;
+    height: 80px;
+    position: fixed;
+    display: flex;
+    flex-wrap: nowrap !important;
+    padding: 10px 5% 10px 7% !important;
+    background: linear-gradient(103.17deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.05) 76.68%);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    align-items: baseline;
+    align-content: flex-end;
+    color: #fff;
+    z-index: 98;
+    transition: height 0.8s ease-in;
+}
+
+nav.nav-advert {
+    background-color: #fff;
+    color: #000;
+}
+
+nav .logo {
+    flex: 0.4;
+}
+
+nav .logo img {
+    width: 40px;
+    height: 60px;
+    display: inline;
+}
+
+nav .logo span {
+    font-size: 2rem;
+}
+
+nav .nav-items {
+    display: flex;
+    flex: 1;
+    list-style: none;
+    flex-direction: row;
+    font-size: x-large;
+}
+
+nav ul.nav-items li {
+    margin-left: 25px;
+    align-items: center;
+}
+
+nav ul.nav-items li a {
+    padding-bottom: 4px;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav.nav-advert ul.nav-items li a {
+    padding-bottom: 4px;
+    color: #000;
+    text-decoration: none;
+}
+
+nav ul.nav-items li a:hover {
+    border-bottom: 2px solid #f27d1d;
+
+}
+
+nav .menu-bar i {
+    font-size: x-large;
+    margin-left: 15px;
+}
+
+/* ----- ALL BOOK SWAP HAS THIS CODES ------ (UP) */
+main {
+    width: 100vw;
+    min-height: 100vh;
+    padding-top: 120px;
+    background: url(/static/img/bookmagazine.jpg) center no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 10%;
+    padding-top: 15vh;
+}
+
+main .box {
+    margin: 10px;
+    padding: 50px;
+    background: linear-gradient(103.17deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.05) 76.68%);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 15px;
+    display: flex;
+}
+
+main .box .content h1 {
+    font-size: 45px;
+    align-items: center;
+}
+
+main .box .content p {
+    font-size: 22px;
+    line-height: 35px;
+    margin-top: 25px;
+}
+
+main .box .content {
+    /* width: 60%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+main .box .box-img {
+    width: 40%;
+}
+
+main .box img {
+    transform: scale(1.5) translate(25px, 15px);
+}
+
+main .box .book-btn {
+    width: 150px;
+    border-radius: 15px;
+    padding: 12px;
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #f27d1d;
+}
+
+main.login,
+main.center {
+    display: flex;
+    padding-top: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+main.login .form {
+    max-width: 550px;
+    min-height: 550px;
+    margin: 10px;
+    padding: 25px;
+    background: linear-gradient(103.17deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.05) 76.68%);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    margin: 5px;
+    border-radius: 35px;
+    text-align: center;
+}
+
+main.login .form h1 {
+    font-size: 50px;
+}
+
+main.login .form .input-block {
+    display: flex;
+    padding: 5px 15px 5px 10px;
+    margin: 10px;
+    border-bottom: 1px solid #fff;
+    font-size: x-large;
+    align-items: center
+}
+
+main.login .form .input-block input,
+main.login .form .input-block select {
+    width: 100%;
+    margin-left: 5px;
+    height: 40px;
+    background: transparent;
+    color: #fff !important;
+    border: none;
+    outline: none;
+}
+
+main.login .form .input-block select option {
+    background-color: #07080D;
+}
+
+main.login .form .btn-submit {
+    text-decoration: none;
+    background-color: #f27d1d;
+    border-radius: 10px;
+    padding: 10px 70px;
+    font-style: normal;
+    color: #ffffff !important;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+main.login .form h5 a {
+    color: #f27d1d;
+}
+
+main .profile {
+    min-height: 550px;
+    margin: 10px;
+    padding: 50px;
+    background: linear-gradient(103.17deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.05) 76.68%);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    margin: 5px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+main .profile img,
+main .form img {
+    border-radius: 50%;
+    background-color: #f27d1d;
+}
+
+main .profile ul {
+    list-style: none;
+}
+main .profile ul li{
+    margin-top: 15px;
+}
+main .profile ul li span{
+    font-size: xx-large;
+    text-transform:capitalize;
+}
+main .profile ul li strong {
+    font-size: xx-large;
+    margin-right: 15px;
+}
+
+main .profile .change-button {
+    display: flex;
+    justify-content: center;
+}
+
+main .profile .change-button .btn-submit {
+    text-decoration: none;
+    font-style: normal;
+    color: white !important;
+    background-color: #f27d1d;
+    padding: 10px 25px;
+    margin: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 10px;
+}
+
+
+
+
+/* ---------------------MEDIA QUERY ---------------------------- */
+@media (max-width: 1600px) {
+    main .box .content h1 {
+        font-size: xx-large;
+    }
+
+    main .box .content p {
+        font-size: large;
+        line-height: 25px;
+    }
+
+    main .box img {
+        transform: translate(20px, 55px) scale(1.9);
+    }
+}
+
+@media (max-width: 1200px) {
+    nav .logo {
+        flex: 0.5;
+    }
+
+    nav .nav-items {
+        flex: 1.2;
+        font-size: larger;
+    }
+
+    nav .nav-items li {
+        margin-left: 15px !important;
+    }
+    main .box{
+        padding: 15px;
+    }
+    main .box .content h1 {
+        font-size: 25px;
+    }
+
+    main .box .content p {
+        font-size: 15px;
+    }
+
+    main .box img {
+        transform: translate(28px, 55px) scale(2.5);
+        z-index: 15;
+    }
+
+    main .box .book-btn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1020px) {
+    nav {
+        padding: 0px;
+        height: 70px;
+        flex-wrap: nowrap !important;
+    }
+
+    nav .logo {
+        flex: 0.9;
+    }
+
+    nav .logo img {
+        width: 30px;
+        height: auto;
+    }
+
+    nav .logo span {
+        font-size: 18px;
+    }
+
+    nav .nav-items {
+        width: 100vw;
+        position: absolute;
+        flex-direction: column;
+        padding-bottom: 25px;
+        left: 0;
+        top: -400px;
+        z-index: 7;
+        transition: all 0.8s ease-in-out;
+    }
+
+    nav .nav-items li {
+        margin-top: 15px;
+    }
+
+    nav.active {
+
+        height: 400px;
+    }
+
+    nav.active .nav-items {
+        top: 90px;
+    }
+
+    nav .menu-bar .event-btn::before {
+        content: "\f0c9";
+    }
+
+    nav.active .menu-bar .event-btn::before {
+        content: "\58";
+    }
+
+    main .box {
+        padding: 10px;
+    }
+
+    main .box .content h1 {
+        font-size: 24px;
+    }
+
+    main .box .content p {
+        margin: 5px;
+        font-size: 12px;
+    }
+
+    main .box .book-btn {
+        font-size: 18px;
+    }
+
+}
+
+@media(max-width: 995px) {
+    main .box {
+        padding: 25px;
+    }
+
+    main .box .content h1 {
+        font-size: 24px;
+    }
+
+    main .box .content p {
+        line-height: inherit;
+        font-size: 14px;
+    }
+
+    main .box img {
+        transform: translate(15px, 25px) scale(1.2);
+    }
+    main .box .book-btn {
+        width: 150px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width:760px) {
+    main .box .content h1 {
+        font-size: 20px;
+    }
+
+    main .box .content p {
+        font-size: 14px;
+    }
+
+    main .box img {
+        transform: translate(0, 10px) scale(1.2);
+    }
+}
+
+@media (max-width: 540px) {
+    main{
+        padding: 15px;
+        padding-top: 12vh;
+    }
+    main .box {
+        padding: 5px;
+    }
+
+    main .box .content h1 {
+        font-size: 24px;
+    }
+
+    main .box .content p {
+        font-size: 16px;
+        line-height: inherit;
+    }
+    main .box .book-btn {
+        width: 120px;
+        margin-left: 25px;
+        border-radius: 15px;
+        padding: 10px;
+        color: #fff;
+        font-size: 15px;
+    }
+
+    main .box img {
+        transform: translate(15px, 65px) scale(1.8);
+    }
+
+    main.login .form h1 {
+        font-size: 30px;
+    }
+
+    main.login .form .input-block {
+        display: flex;
+        padding: 0px 5px 0px 5px;
+        margin: 15px;
+        font-size: larger;
+        align-items: center
+    }
+
+    main.login .form .input-block input,
+    main.login .form .input-block select {
+        width: 100%;
+        margin-left: 5px;
+        height: 30px;
+        background: transparent;
+        color: #fff !important;
+        border: none;
+        outline: none;
+    }
+
+    main.login .form .input-block select option {
+        background-color: #07080D;
+    }
+
+    main.login .form .btn-submit {
+        border-radius: 10px;
+        padding: 8px 40px;
+        font-style: normal;
+        color: #ffffff !important;
+        font-size: 24px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    main.login .form h5 a {
+        color: #f27d1d;
+        font-size: medium;
+    }
+
+    main .profile {
+        max-height: 700px;
+        margin: 10px;
+        padding: 5px;
+    }
+
+    main .profile ul {
+        list-style: none;
+        font-size: medium;
+    }
+    main .profile ul li {
+        margin: 0;
+    }
+    main .profile ul li strong {
+        margin-right: 5px;
+        font-size: larger;
+        font-weight: 900;
+    }
+    main .profile ul li span{
+        font-size: larger;
+    }
+    main .profile .change-button .btn-submit {
+        padding: 10px 15px;
+        font-size: 12px;
+        font-weight: 400;
+        border-radius: 10px;
+    }
+
+    main .box {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    main{
+        padding: 10px;
+        padding-top: 12vh ;
+    }
+    main .box {
+        padding: 5px;
+    }
+    main .box .content p {
+        font-size: 14px;
+    }
+
+    main .box img {
+        transform: translate(0px, 85px) scale(2);
+    }
+    main .box .book-btn {
+        width: 100px;
+        margin-top: -20px;
+        border-radius: 15px;
+        padding: 10px;
+        color: #fff;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 320px) {
+    nav .logo span {
+        display: none;
+    }
+
+    main .box {
+        padding: 8px;
+    }
+
+    main .box .content h1 {
+        font-size: 16px;
+    }
+
+    main .box .content p {
+        margin: 5px;
+        font-size: 12px;
+    }
+
+    main .box img {
+        transform: translate(0px, 30px) scale(2);
+    }
+
+    main.login {
+        display: flex;
+        padding: 70px 15px 15px 15px;
+    }
+
+    main.login .form {
+        padding: 15px 25px 5px 25px;
+        border-radius: 25px;
+    }
+
+    main.login .form h1 {
+        font-size: 25px;
+    }
+
+    main.login .form .input-block {
+        display: flex;
+        padding: 0px 5px 0px 5px;
+        margin: 15px;
+        font-size: medium;
+    }
+
+    main.login .form .input-block input,
+    main.login .form .input-block select {
+        width: 100%;
+        margin-left: 5px;
+        height: 30px;
+        background: transparent;
+        color: #fff !important;
+        border: none;
+        outline: none;
+    }
+
+    main.login .form .input-block select option {
+        background-color: #07080D;
+    }
+
+    main.login .form .btn-submit {
+        border-radius: 10px;
+        padding: 8px 40px;
+        margin-top: -8px;
+        font-size: medium;
+        text-align: center;
+    }
+
+    main.login .form h5 {
+        margin-top: -15px;
+        font-size: smaller;
+    }
+
+    main.login .form a {
+        font-size: smaller;
+    }
+}
+
+/* END FIRST SECTION  */
+
+header {
+    margin: 120px 10% 0 10%;
+}
+
+header .search {
+    display: flex;
+    margin: 40px 10% 0 10%;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+header .search .big-input {
+    width: 50%;
+    background-color: #fff;
+    height: 60px;
+    padding: 15px;
+    font-size: x-large;
+}
+
+header .search .big-input input {
+    width: 80%;
+    border: none;
+    outline: none;
+}
+
+header .search .selection-group {
+    display: flex;
+    width: 50%;
+}
+
+header .search .selection-group .select-input {
+    width: 50%;
+    font-size: xx-large;
+    border-left: 1px solid #000;
+    padding-left: 15px;
+}
+
+header .search .selection-group .select-input i {
+    font-size: x-large;
+}
+
+header .search .selection-group .select-input select {
+    width: 70%;
+    margin-left: 5px;
+    height: 50px;
+    background: transparent;
+    color: #000 !important;
+    border: none;
+    outline: none;
+}
+
+.container .advert-section .advert-box {
+    margin-top: 15px;
+    height: 580px;
+    display: flex;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 20px;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.container  .advert-section .advert-box img {
+    width: 100%;
+    min-height: 150px;
+    max-height: 250px;
+}
+
+.container  .advert-section .advert-box ul {
+    margin-left: -25px;
+    margin-top: 15px;
+    list-style: none;
+    font-size: 22px;
+}
+.container  .advert-section .advert-box ul li {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.container  .advert-section .advert-box .about-box {
+    font-size: larger;
+}
+
+header .add_advert .white-card {
+    width: 100%;
+    min-height: 480px;
+    margin: 10px;
+    padding: 15px;
+    padding: 28px 32px;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+header .add_advert .white-card  .about-user{
+    display: flex;
+    min-height: 420px;
+    flex-direction: column;
+    padding: 2%;
+    justify-content: space-evenly;
+}
+header .add_advert .input-group {
+    display: flex;
+    min-height: 420px;
+    flex-direction: column;
+    padding: 2%;
+    justify-content: space-evenly;
+}
+
+header .add_advert .input-group input {
+    width: 100%;
+    height: 50px;
+    border: 2px solid #4C4C4C;
+    font-family: 'Canaro';
+    font-size: larger;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 5px 0 5px 0;
+    padding: 13px 15px 13px 15px;
+}
+
+header .add_advert .input-group select {
+
+    width: 100%;
+    height: 50px;
+    border: 2px solid #4C4C4C;
+    color: #4C4C4C;
+    font-family: 'Canaro';
+    font-size: x-large;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 5px 0 5px 0;
+    padding: 5px 10px 10px 5px;
+}
+
+header .add_advert .input-group select option {
+    width: 80%;
+}
+
+header .add_advert .input-group textarea {
+    -moz-appearance: textfield;
+    width: 100%;
+    height: 100px;
+    border: 1px solid #4C4C4C;
+    color: #4C4C4C;
+    font-family: 'Canaro';
+    font-size: large;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 5px 0 5px 0;
+    padding: 5px 10px 10px 5px;
+}
+
+header .add_advert .input-group button,
+.white-card button {
+    width: 240px;
+    height: 60px;
+    color: #fff;
+    font-family: 'Canaro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    border-radius: 15px !important;
+    padding: 10px;
+    background-color: #f27d1d;
+    justify-content: flex-end;
+
+}
+header .add_advert .white-card .about-book{
+    list-style: none;
+    font-size: x-large;
+    margin-left: -30px;
+}
+header .add_advert .white-card .about-book li{
+    margin-top: 15px;
+}
+header .add_advert .white-card .about-book li strong{
+    font-size: xx-large;
+}
+header .add_advert .white-card .about-book li p{
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.white-card button:hover {
+    color: #fff;
+}
+
+.white-card .about-user .user-componet {
+    display: flex;
+}
+
+.white-card .about-user .user-componet img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.white-card .about-user .user-componet .user-bio {
+    display: flex;
+    margin-left: 15px;
+    font-size: larger;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.white-card .about-user ul {
+    margin-top: 25px;
+    margin-left: -15px;
+    list-style: none;
+    font-size: 20px;
+}
+
+.white-card .about-user ul li {
+    margin-top: 10px;
+}
+
+.white-card .about-user ul li strong {
+    font-size: 22px;
+    margin-right: 5px;
+}
+
+.edit-section .card{
+    background-color: #fff;
+    height: 580px;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 15px;
+}
+.edit-section .card ul{
+    margin-top: 15px;
+    list-style: none;
+    margin-left: -25px;
+    font-size: larger;
+}
+.edit-section .card ul li{
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.edit-section .card ul li strong{
+    font-size: x-large;
+    margin-right: 5px;
+}
+.edit-section .card  .about-box{
+    margin-left: 5px;
+    font-size: larger;
+}
+.edit-section .card i{
+    margin-top: 15px;
+    margin-right: -45px;
+    font-size: x-large;
+}
+.edit-section .card .dropdown{
+    display: none;
+    position: absolute;
+    width: 200px;
+    margin-left: -180px;
+    background: #FFFFFF;
+    box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.15);
+
+}
+.edit-section .card .dropdown.active{
+    display: block;
+}
+/* 
+header .add_advert .input-group input,
+header .add_advert .input-group select{
+    display: block;
+} */
+
+
+
+@media (max-width: 1600px) {
+    header .search .selection-group .select-input {
+        font-size: x-large;
+    }
+
+    .container  .advert-section .advert-box ul {
+        margin-left: -25px;
+        margin-top: 15px;
+        list-style: none;
+        font-size: 18px;
+    }
+
+    .container  .advert-section .advert-box .about-box {
+        font-size: larger;
+    }
+
+    header .add_advert .input-group button,
+    .white-card .about-user button {
+        font-size: 14px;
+    }
+}
+@media (max-width: 1440px) {
+   .white-card .about-user .user-componet .user-bio h3{
+        font-size: larger;
+    }
+    .white-card .about-user ul li {
+        margin-top: 5px;
+    }
+
+    .white-card .about-user ul li strong {
+        font-size: 20px;
+    }
+    header .add_advert .input-group button,
+    .white-card .about-user button {
+        width: 120px;
+        height: 60px;
+        font-weight: 400;
+        font-size: 18px;
+
+    }
+}
+@media (max-width: 1290px) {
+    .container .advert-section .advert-box {
+        height: 480px;
+    }
+    header .add_advert .input-group>* {
+        font-size: large !important;
+    }
+
+    header .add_advert .input-group select option {
+        font-size: large;
+    }
+    header .add_advert .white-card{
+        padding: 15px;
+    }
+
+    .white-card .about-user .user-componet .user-bio h3{
+        font-size: medium;
+    }
+    .white-card .about-user .user-componet .user-bio h5{
+        font-size: medium;
+    }
+    .white-card .about-user ul li {
+        margin-top: 0px;
+        font-size: medium;
+    }
+
+    .white-card .about-user ul li strong {
+        font-size: 15px;
+    }
+    header .add_advert .white-card .about-book{
+        font-size: medium;
+    }
+    header .add_advert .white-card .about-book li{
+        margin-top: 8px;
+    }
+    header .add_advert .white-card .about-book li strong{
+        font-size: large;
+    }
+    header .add_advert .input-group button,
+    .white-card .about-user button {
+        width: 120px;
+        height: 60px;
+        font-weight: 400;
+        font-size: 15px;
+
+    }
+
+}
+
+@media (max-width: 1020px) {
+    header .search {
+        display: block;
+        background-color: transparent;
+    }
+
+    header .search .big-input {
+        width: 100%;
+        height: 60px;
+        background-color: #fff;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    header .search .big-input input {
+        width: 70%;
+    }
+
+    header .search .selection-group {
+        width: 100%;
+        font-size: x-large;
+    }
+
+    header .search .selection-group .select-input {
+        width: 49%;
+        font-size: x-large;
+        height: 60px;
+        background-color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    header .search .selection-group .select-input:first-child {
+        margin-right: 15px;
+    }
+}
+
+@media (max-width:760px) {
+    header .add_advert .input-group>* {
+        font-size: medium !important;
+    }
+
+    header .add_advert .white-card {
+        padding: 15px;
+    }
+
+    .white-card .about-user .user-componet .user-bio {
+        font-size: medium;
+    }
+
+    .white-card .about-user ul {
+        margin-top: 30px;
+        font-size: 16px;
+    }
+
+    .white-card .about-user ul li {
+        margin-top: 8px;
+    }
+
+    .white-card .about-user ul li strong {
+        font-size: 18px;
+    }
+
+    header .add_advert .input-group button,
+    .white-card .about-user button {
+        width: 120px;
+        height: 50px;
+        font-weight: 400;
+        font-size: 12px;
+
+    }
+    header .add_advert .white-card .about-book{
+        font-size: large;
+    }
+    header .add_advert .white-card .about-book li{
+        margin-top: 8px;
+    }
+    header .add_advert .white-card .about-book li strong{
+        font-size: x-large;
+    }
+    header .add_advert .white-card .about-book li p{
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 580px) {
+    header .search {
+        margin: 5px 2% 0 2%;
+    }
+
+    header .search .selection-group .select-input select {
+        width: 65%;
+        font-size: medium;
+        padding: 0;
+    }
+
+    .container  .advert-section .advert-box {
+        height: 350px;
+        padding: 15px 8px 15px 8px;
+    }
+
+    .container  .advert-section .advert-box ul {
+        margin-left: -25px;
+        margin-top: 15px;
+        list-style: none;
+        font-size: 12px;
+    }
+
+    .container  .advert-section .advert-box ul li {
+        /* margin-top: -2px; */
+    }
+
+    .container  .advert-section .advert-box .about-box {
+        font-size: 10px;
+    }
+
+    header .add_advert .input-group>* {
+        font-size: small !important;
+    }
+    .edit-section .card{
+        height: 580px;
+    }
+    .edit-section .card ul{
+        font-size: larger;
+    }
+    .edit-section .card ul li strong{
+        font-size: large;
+    }
+    .edit-section .card  .about-box{
+        font-size: medium;
+    }
+    .edit-section .card i{
+        font-size: large;
+    }
+}
+
+@media (max-width: 360px) {
+    header .search .selection-group {
+        flex-direction: column;
+    }
+
+    header .search .selection-group .select-input {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    header .search .selection-group .select-input select {
+        width: 75%;
+        font-size: x-large;
+    }
+    .container  .advert-section .advert-box {
+        height: 300px;
+    }
+    .container  .advert-section .advert-box ul {
+        margin-left: -25px;
+        margin-top: 10px;
+        list-style: none;
+        font-size: 12px;
+    }
+    .container  .advert-section .advert-box ul li{
+        /* margin-top: -8px; */
+    }
+
+    .container  .advert-section .advert-box .about-box {
+        font-size: 10px;
+    }
+
+    header .add_advert .input-group>* {
+        font-size: smaller !important;
+    }
+
+    .white-card .about-user .user-componet img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .white-card .about-user .user-componet .user-bio h3 {
+        font-size: small;
+    }
+
+    .white-card .about-user .user-componet .user-bio h5 {
+        font-size: smaller;
+    }
+
+    .white-card .about-user ul li {
+        margin-top: 2px;
+        margin-right: 2px;
+    }
+
+    .white-card .about-user ul li strong {
+        font-size: 13px;
+    }
+
+    .white-card .about-user ul li span {
+        font-size: smaller;
+    }
+    .edit-section .card{
+        height: 450px;
+    }
+    .edit-section .card ul{
+        font-size: medium;
+    }
+    .edit-section .card ul li strong{
+        font-size: medium;
+    }
+    .edit-section .card  .about-box{
+        font-size: medium;
+    }
+    .edit-section .card i{
+        font-size: large;
+    }
+
+}
+
+@media (max-width: 290px) {
+    .container  .advert-section .advert-box .about-box {
+        font-size: xx-small;
+    }
+}
+
+
+/* -------------------- footer ------------------------ */
+
+footer {
+    margin-top: 50px;
+    width: 100vw;
+    min-height: 250px;
+    padding: 50px 10% 50px 10%;
+    background-color: #202020;
+    text-align: left;
+    color: #fff;
+    font-size: 24px;
+}
+
+footer .brend-name {
+    font-size: xx-large;
+}
+
+footer ul {
+    list-style: none;
+    margin-left: -35px;
+    font-size: x-large;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    color: #f27d1d;
+}
+
+footer .input-group {
+    display: flex;
+    width: 80%;
+    height: 50px;
+    margin: 5%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px;
+    color: #000;
+    align-items: center;
+}
+
+footer .input-group input {
+    width: 80%;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #000;
+}
+
+.btn-orange {
+    width: 200px;
+    height: 60px;
+    border-radius: 15px;
+    padding: 8px;
+    padding: 8px 20px;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    background-color: #f27d1d;
+}
+
+.btn-orange:hover {
+    color: #fff;
+}
+
+@media (max-width: 1600px) {}
+
+@media (max-width: 1290px) {}
+
+@media (max-width: 1020px) {}
+
+@media(max-width: 1010px) {}
+
+@media (max-width:760px) {}
+
+@media (max-width: 540px) {}
+
+@media (max-width: 360px) {}
+
+@media (max-width: 290px) {}
+
+
+
+.paginator,
+.paginator *,
+.paginator *:before,
+.paginator *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+}
+.paginator {
+  font-size: 8pt;
+  line-height: 1;
+  font-weight: 400;
+  font-family: 'Open Sans', 'Source Sans Pro', Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Myriad Pro', 'Segoe UI', Myriad, Helvetica, 'Lucida Grande', 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  margin: 1em auto;
+  text-align: center;
+  transition: font-size .2s ease-in-out;
+}
+.paginator ul {
+  list-style-type: none;
+  display: inline;
+  font-size: 100%;
+  margin: 0;
+  padding: .5em;
+}
+.paginator ul li {
+  display: inline-block;
+  font-size: 100%;
+  width: auto;
+  border-radius: 3px;
+}
+.paginator > a {
+  font-size: 140%;
+}
+.paginator a {
+  color: #777;
+  font-size: 100%;
+  padding: .5em;
+}
+.paginator a:focus,
+.paginator a:hover {
+  color: #f60;
+}
+.paginator li.current {
+    padding: 6px;
+  background: rgba(0,0,0,.1)
+}
+/* Disabled & Hidden Styles */
+.paginator .disabled,
+.paginator [hidden],
+.paginator [disabled] {
+  opacity: .5;
+  pointer-events: none;
+}
+@media (min-width: 350px) {
+  .paginator {
+    font-size: 10pt;
+  }
+}
+@media (min-width: 500px) {
+  .paginator {
+    font-size: 12pt;
+  }
+}
+@media (min-width: 700px) {
+  .paginator {
+    font-size: 14pt;
+  }
+}
+@media (min-width: 900px) {
+  .paginator {
+    font-size: 16pt;
+  }
+}
+.disabled{
+    display: none;
+}

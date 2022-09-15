@@ -1,0 +1,65 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+  <main>
+    <div class="row">
+      <div class="col-lg-6 mt-2">
+        <div class="box row">
+          <div class="col-xl-7 col-lg-8 col-md-7 col-sm-6 col-8  content">
+            <br>
+            <h1>E’lon ko‘rish</h1>
+            <p>Siz bu sayt orqali o’zingizda bor kitobni manfaatli ravishda siz qidirgan yoki o‘zingizga yoqqan kitobga
+              alishtirishingiz mumkin.
+            </p>
+            <p>
+              Ro‘yxatdan o‘ting va ozingizdagi kitoblarni akkauntingizga joylang.
+            </p>
+            <br>
+            <a href="{% url 'main:book-list' %}" class="book-btn">
+              E'lon ko‘rish
+            </a>
+          </div>
+          <div class="col-xl-5 col-lg-3 col-md-5 col-sm-6 col-4">
+            <img src="/static/img/Book.png" alt="" class="img-fluid">
+          </div>
+          <br>
+          <br><br>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-2">
+        <div class="box row">
+          <div class="col-xl-7 col-lg-8 col-md-7 col-sm-8 col-8  content">
+            <br>
+            <h1>E’lon joylash</h1>
+            <p>Siz bu sayt orqali o’zingizda bor kitobni manfaatli ravishda siz qidirgan yoki o‘zingizga yoqqan kitobga
+              alishtirishingiz mumkin.
+            </p>
+            <p>
+              Ro‘yxatdan o‘ting va ozingizdagi kitoblarni akkauntingizga joylang.
+            </p>
+            <br>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'main:create-book' %}" class="book-btn">
+              E'lon Joylash
+            </a>
+            {% else %}
+            <a href="{% url 'account:login' %}" class="book-btn">
+              E'lon Joylash
+            </a>
+            {% endif %}
+          </div>
+          <div class="col-xl-5 col-lg-3 col-md-5 col-sm-4 col-4">
+            <img src="/static/img/Book2.png" alt="" class="img-fluid">
+          </div>
+          <br>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}
+{% block meta %}
+<meta name="description" content="Bookswap.uz O'zingiz hohlagan kitob qidiring va soting"/>
+<meta name="keywords" content="Bookswap.uz bookswap kitob magazin onlayn kitob magazin kitob dokoni">
+{% endblock meta %}

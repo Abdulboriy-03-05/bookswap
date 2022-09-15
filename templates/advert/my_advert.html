@@ -1,0 +1,63 @@
+{% extends "advert/base.html" %}
+{% load static %}
+{% block content %}
+  <header>
+    <section>
+      <h1>Mening E’lonlarim</h1>
+      <div class="edit-section mt-5">
+          <div class="row">
+              {% for  book in  object %}
+              <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-12">
+                  <div class="card">
+                      <a href="{% url 'main:detail' book.slug%}" style="text-decoration: none;" class="text-dark">
+                        <img src="{{ book.image.url}}" alt="" style="    width: 100%;  max-height: 300px;">
+                    </a>
+                    <div class="row">
+                        <div class="col-10">
+                          <ul>
+                              <li>
+                                  <strong>Nomi:</strong>
+                                  <span>{{ book.title}}</span>
+                              </li>
+                              <li>
+                                  <strong>Avtori:</strong>
+                                  <span>{{ book.author_pen}}</span>
+                              </li>
+                              <li>
+                                  <strong>Janri:</strong>
+                                  <span>{{ book.genre}}</span>
+                              </li>
+                          </ul>
+                          <span class="fa-solid fa-check">&nbsp &nbsp Sotuvga qoyildi</span>
+                          <br>
+                          <span class="about-box">{{book.author.address}} <br> {{book.created_at}}</span>
+                      </div>
+                      <div class="col-2">
+                          <i class="fa-solid fa-ellipsis-vertical dropdown-button p-1 btn"></i>
+                          <div class="dropdown">
+                              <ul>
+                                  <li>
+                                      <a href="{% url 'main:edit' book.slug %}" class="text-dark" style="text-decoration: none;">
+                                        Tahrirlash
+                                    </a>
+                                  </li>
+                                  <li>
+                                      <a href="{% url 'main:delete' book.slug %}" class="text-dark" style="text-decoration: none;">O'chirish</a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+             {% endfor %}
+          </div>
+      </div>
+      </div>
+  </section>
+    <center>
+      <a href="{% url 'main:create-book' %}" class="btn btn-orange mt-5 mb-5">Kitob joylash</a>
+    </center>
+  </header>
+
+  {% endblock %}

@@ -1,0 +1,86 @@
+{% extends "advert/base.html" %}
+{% load static %}
+{% block content %}
+<header>
+  <h1>E’lonlar oynasi</h1>
+  <form method="post" id="header-search-desktop-span" onchange="submit()">
+    {% csrf_token %}
+    <div class="search">
+      <div class="big-input">
+        <i class="fa-light fa-search"></i>
+        {{form.query}}
+      </div>
+      <div class="selection-group">
+        <div class="select-input">
+          <i class="fal fa-location-dot"></i>
+          {{form.location}}
+        </div>
+        <div class="select-input">
+          <i class="fal fa-book-open"></i>
+          {{form.genre}}
+        </div>
+      </div>
+    </div>
+  </form>
+</header>
+<div class="container">
+  <div class="advert-section mt-5">
+    <div class="row">
+      
+      {% for book in object_list %}
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <a href="{% url 'main:detail' book.slug %}" class="text-dark" style="text-decoration: none;">
+          <div class="advert-box">
+            <img src="{{book.image.url}}" alt="">
+            <ul>
+              <li>
+                <strong>Nomi:</strong>
+                <span>{{book.title}}</span>
+              </li>
+              <li>
+                <strong>Avtori:</strong>
+                <span>{{book.author_pen}}</span>
+              </li>
+              <li>
+                <strong>Janri:</strong>
+                <span>{{book.genre}}</span>
+              </li>
+            </ul>
+            <span class="about-box">{{book.author.address}} <br> {{book.created_at}}</span>
+          </div>
+        </a>
+      </div>
+      {% empty %}
+      <h1 class="m-5">Hech narsa topilmadi</h1>
+      {% endfor %}
+
+  
+
+    </div>
+  </div>
+
+  <div class="paginator ">
+
+    {% if object_list.has_previous %}
+    <a href="?page={{ object_list.previous_page_number }}"><i class="fas fa-chevron-left"></i></a>
+    {% endif %}
+    <ul>
+      {% if object_list > 1 %}
+        {% for i in object_list.paginator.page_range %}
+          {% if object_list.number == i %}
+          <li class=current><a href="" disabled>{{ i }}</a ></li>
+          {% else %}
+          <li><a href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %}
+          {% endfor %}
+      {% endif %}
+      
+    </ul>
+
+    {% if object_list.has_next %}
+    <a href='?page={{ object_list.next_page_number }}'><i class="fas fa-chevron-right"></i></a>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

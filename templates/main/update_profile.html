@@ -1,0 +1,114 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+<main class="login">
+    <div class="form">
+      <div class="text-center img_text">
+          <img src="{{request.user.avatar.url}}" width="120px" height="120px" style="border-radius: 50%; height: 120px; width: 120px;" alt="persons-image" id="profileImg">
+      </div>
+      <form form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+          <input type="file" name="avatar" accept="image/*" id="id_avatar" style="display: none;">
+          <label for="id_avatar">
+              <h3>Profile rasmini O‘zgartirish</h3>
+          </label>
+          <div class="input-block">
+            <i class="fa-solid fa-user-check"></i>
+            {{ form.username }}
+            {% if form.username.errors %}
+            <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+            {% endif %}
+        </div>
+        <div class="input-block">
+            <i class="fa-light fa-user"></i>
+            {{ form.name }}
+            {% if form.name.errors %}
+            <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+            {% endif %}
+        </div>
+        <div class="input-block">
+            <i class="fa-solid fa-user-hair"></i>
+            {{ form.surname }}
+            {% if form.surname.errors %}
+            <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+            {% endif %}
+        </div>
+        <div class="input-block">
+            <i class="fa-solid fa-chart-waterfall"></i>
+            {{ form.age }}
+            {% if form.age.errors %}
+            <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+            {% endif %}
+        </div>
+        <div class="input-block">
+          <i class="fa-solid fa-phone">+998</i>
+            {{ form.phone }}
+            {% if form.phone.errors %}
+            <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+            {% endif %}
+        </div>
+        <div class="input-block">
+            <i class="fa-solid fa-location-dot"></i>
+            {{ form.address }}
+        </div>
+        <br>
+          <input type="submit" value="O‘zgartirish" class="btn btn-submit">
+          <br><br>
+      </form>
+    </div>
+</main>
+<style>
+  html{
+    height: 100vh !important;
+    overflow: auto !important;
+  }
+  body{
+    height: 100vh;
+    overflow: auto;
+  }
+  </style>
+{% endblock %}
+
+{% block code %}
+<script type="text/javascript" src="/static/js/resizer_image.js"></script>
+<script type="text/javascript" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js"></script>
+<script>
+  $("#id_phone").inputmask({ mask: "(99) 999 99 99" });
+    let avatar_input = document.querySelector('#id_avatar');
+    var target = document.getElementById('profileImg')
+    let input = document.querySelectorAll('input');
+    let value = ['foydalanuvchi nomi', 'Ismingiz', 'Familangiz', 'yoshingiz', ' nomeringiz', ]
+    for (var i = 2; i < input.length-1; i++) {
+        input[i].setAttribute('autocomplete', 'off')
+        input[i].setAttribute('placeholder', value[i-2])
+    }
+    let file;
+
+    avatar_input.addEventListener("change", (event)=>{
+      event.preventDefault();
+      file = event.target.files[0]
+      showFile();
+    });
+
+    function showFile(){
+      let fileType = file.type;
+      let validExtensions = ["image/jpeg", "image/jpg", "image/png"];
+      if(validExtensions.includes(fileType)){
+        let fileReader = new FileReader();
+        fileReader.onload = ()=>{
+          let fileURL = fileReader.result;
+          target.attributes.src.nodeValue = `${fileURL}`
+        }
+        fileReader.readAsDataURL(file);
+      }else{
+        alert("This is not an Image File!");
+      }
+    }
+  $('#id_avatar').imageUploadResizer({
+      max_width: 280, // Defaults 1000
+      max_height: 280, // Defaults 1000
+      quality: 1, // Defaults 1
+      do_not_resize: ['gif', 'svg'], // Defaults []
+  });
+</script>
+{% endblock %}

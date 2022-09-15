@@ -1,0 +1,45 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+<main class="login">
+    <div class="form container">
+        <h1>Kirish</h1>
+        <br><br>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="input-block">
+                <i class="fa-light fa-user"></i>
+                <!-- {{ form.username }} -->
+                <input type="text" name="username" placeholder="Foydalanuvchi nomi" name="username" autocomplete="off"
+                    autofocus="" autocapitalize="none"  maxlength="256" required=""  id="id_username">
+                {% if form.errors %}
+                <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                {% endif %}
+            </div>
+            <br><br>
+            <div class="input-block">
+                <i class="fa-light fa-lock"></i>
+                <input type="password" name="password" required="" id="id_password" autocomplete="off" placeholder="Parol">
+                {% if form.errors %}
+                <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                {% endif %}
+                <!-- <input type="password" placeholder="password" name="password" autocomplete="off"> -->
+            </div>
+            <br><br>
+            <input type="submit" value="Kirsh" class="btn btn-submit">
+            <br><br><br>
+            <h5>Akkauntingiz yo’qmi ? <a href="{% url 'account:register'%}">Ro’yxatdan o’ting</a> </h5>
+        </form>
+    </div>
+</main>
+<style>
+    html{
+      height: 100vh !important;
+      overflow: auto !important;
+    }
+    body{
+      height: 100vh;
+      overflow: auto;
+    }
+    </style>
+{% endblock %}

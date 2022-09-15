@@ -1,0 +1,48 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+<main class="login">
+  <div class="profile">
+    <div class="text-center img_text">
+      <img src="{{object.avatar.url}}" width="120px" height="120px"
+        style="border-radius: 50%; height: 120px; width: 120px;" alt="persons-image">
+    </div>
+    <ul>
+      <li>
+        <strong>Ism:</strong>
+        <span>{{object.name}}</span>
+      </li>
+      <li>
+        <strong>Familiya:</strong>
+        <span>{{object.surname}}</span>
+      </li>
+      <li>
+        <strong>Foydalanuvchi nomi:</strong> 
+        <span>@{{object.username}}</span>
+      </li>
+      <li>
+        <strong>Yashash joyi:</strong>
+        <span>{{object.address}}</span>
+      </li>
+      <li>
+        <strong>Telefon raqamai:</strong>
+        <span>{{object.phone}}</span>
+      </li>
+    </ul>
+    <div class="change-button">
+      <a href="{% url 'account:update' %}" class="btn btn-submit">O‘zgartirish</a>
+      <a href="{% url 'account:logout' %}" class="btn btn-submit">Hisobdan chiqish</a>
+    </div>
+  </div>
+</main>
+<style>
+  html{
+    height: 100vh !important;
+    overflow: auto !important;
+  }
+  body{
+    height: 100vh;
+    overflow: auto;
+  }
+  </style>
+{% endblock content %}

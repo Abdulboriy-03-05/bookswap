@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+<main class="login">
+    <div class="form container" style="min-height: 350px; display: flex;  flex-direction: column;  justify-content: space-evenly;">
+        <h1>Hisobdan chiqildi</h1>
+        <br><br>
+        <h5><a href="{% url 'account:login'%}" class="h3">Qayta kiring</a> <span class="h4">yoki </span> <a href="{% url 'account:register'%}" class="h3">Ro’yxatdan o’ting</a></h5>
+
+    </div>
+</main>
+<style>
+    html{
+      height: 100vh !important;
+      overflow: auto !important;
+    }
+    body{
+      height: 100vh;
+      overflow: auto;
+    }
+    </style>
+{% endblock %}
